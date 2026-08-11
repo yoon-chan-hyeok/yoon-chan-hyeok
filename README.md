@@ -1,47 +1,111 @@
-# 윤찬혁 | Applied AI & AI Reliability
+<div align="center">
 
-AI 시스템을 만드는 것에서 멈추지 않고, **지식·데이터·실행 흐름이 바뀔 때 실패를 어떻게 발견하고 설명할지**를 탐구합니다.
+# 윤찬혁 · Applied AI Engineer
 
-서울시립대학교에서 교통공학과 인공지능을 함께 공부했으며, 문제 정의부터 데이터 분석, 실험 설계, 프로토타입 구현, 결과 검증까지 주도적으로 수행해 왔습니다.
+### AI를 만드는 것에서 끝내지 않고, 실패를 측정하고 원인을 추적합니다.
 
-## Focus
+서울시립대학교 교통공학 × 인공지능  
+**RAG Evaluation · Multi-Agent Reliability · AI Monitoring · Data Products**
 
-- RAG knowledge update 이후의 품질 변화와 위험 탐지
-- Multi-agent trace의 책임 agent·결정적 실패 단계 추적
-- 라벨이 부족한 환경의 AI 품질 모니터링
-- 교통·공간 데이터를 이용한 운영 의사결정
-- 모델과 웹·DB를 연결한 end-to-end AI application
+[![GitHub](https://img.shields.io/badge/GitHub-yoon--chan--hyeok-181717?style=flat-square&logo=github)](https://github.com/yoon-chan-hyeok)
 
-## Selected Projects
+</div>
 
-| Project | What it demonstrates | Status |
+---
+
+## Featured Work
+
+### 01 · [Temporal RAG Drift Evaluation](https://github.com/yoon-chan-hyeok/temporal-rag-drift)
+
+> 지식 업데이트가 RAG 답변을 어떻게 바꾸는지 측정하고, 그 변화가 실제 품질 저하로 이어질 위험을 탐지합니다.
+
+- CLARK 누적 뉴스 스냅샷을 고정한 **temporal transfer evaluation**
+- 186개 confirmatory cohort에서 **AUROC 0.854 · F1 0.615 · Risk Lift 3.59×**
+- 평가 코드, 6개 테스트 모듈, 집계 결과와 재현 문서를 공개
+
+**Keywords** · Temporal RAG · Drift Detection · Risk Scoring · Evaluation Design
+
+---
+
+### 02 · [Multi-Agent Failure Localization](https://github.com/yoon-chan-hyeok/multi-agent-failure-localization)
+
+> 긴 multi-agent 실행 기록에서 누가, 언제, 어떤 결정으로 최종 실패를 만들었는지 추적합니다.
+
+- Who & When 벤치마크 **184 trajectories** 평가
+- task-only 설정 exact-step **38.59%**, direct baseline **8.15%**
+- 평가 harness, model backend, 테스트와 GitHub Actions 공개
+
+**Keywords** · Multi-Agent Systems · Trace Analysis · Failure Attribution · LLM Evaluation
+
+---
+
+### 03 · [Face Attendance System](https://github.com/yoon-chan-hyeok/face-attendance-system)
+
+> 얼굴 등록부터 인증·출결 기록·관리 화면까지 연결한 end-to-end AI 애플리케이션입니다.
+
+- RetinaFace + ArcFace 기반 다중 프레임 등록과 품질 필터
+- **유사도 임계값 0.68 + 후보 간 margin 0.03**으로 오인식 방어
+- FastAPI · SQLAlchemy · MariaDB · React · Vite 통합
+
+**Keywords** · Computer Vision · Face Recognition · API · Database · Frontend
+
+---
+
+### 04 · [Label-Free OCR Quality Monitoring](https://github.com/yoon-chan-hyeok/ocr-quality-monitoring)
+
+> 정답 라벨이 즉시 없는 운영 환경에서 OCR 임베딩 분포의 이상 신호를 조기에 선별합니다.
+
+- nearest-neighbor · robust z-score · centroid distance · RBF-MMD 모니터링
+- CLI, 합성 예제, 단위 테스트와 GitHub Actions를 갖춘 실행 가능한 패키지
+- 경보를 정답 판정이 아닌 **검토 우선순위 신호**로 설계
+
+**Keywords** · OCR · Data Drift · Unsupervised Monitoring · MMD · CI
+
+---
+
+### 05 · [Major-Event Traffic Delay Analysis](https://github.com/yoon-chan-hyeok/event-traffic-delay-analysis)
+
+> 행사 수요와 교통·공간 데이터를 결합해 혼잡 위험과 운영 대안을 수치화한 졸업 연구입니다.
+
+- 혼잡 관련 상관계수 **0.5864 · 0.5969 · 0.7034**
+- 1.3만 명 수요 시나리오의 평균 지연 **0.80 · 1.26 · 1.93분**
+- 공덕·당산·노량진 허브와 **45인승 × 100대 × 3회 = 13,500명** 수송안 제시
+
+**Keywords** · Mobility Data · EDA · Scenario Analysis · Decision Support
+
+---
+
+## What I Bring
+
+| 역량 | 작업 방식 | 프로젝트 근거 |
 |---|---|---|
-| [Temporal RAG Drift Evaluation](https://github.com/yoon-chan-hyeok/temporal-rag-drift) | 지식 스냅샷 간 변화와 유해한 품질 저하 위험을 구분하는 평가 설계 | Research prototype |
-| [Multi-Agent Failure Localization](https://github.com/yoon-chan-hyeok/multi-agent-failure-localization) | 긴 agent trace에서 책임 agent와 결정적 step을 찾는 실험 | Experimental research |
-| [Face Attendance System](https://github.com/yoon-chan-hyeok/face-attendance-system) | ArcFace·RetinaFace·FastAPI·DB·React를 연결한 실제 동작 프로토타입 | Working prototype |
-| [Major-Event Traffic Delay Analysis](https://github.com/yoon-chan-hyeok/event-traffic-delay-analysis) | 다중 교통·공간 데이터 EDA와 행사 운영 시나리오 | Graduation research |
-| [Label-Free OCR Quality Monitoring](https://github.com/yoon-chan-hyeok/ocr-quality-monitoring) | 정답 라벨 없이 OCR 품질 위험을 선별하는 모니터링 설계 | Implementation in progress |
+| 문제 정의 | 모호한 현상을 측정 가능한 질문과 지표로 바꿉니다. | RAG drift risk, failure localization |
+| 평가 설계 | 비교 기준·누수·불확실성을 먼저 확인합니다. | temporal split, baseline/ablation |
+| AI 구현 | 모델을 API·DB·UI·CLI와 연결합니다. | face attendance, OCR monitor |
+| 데이터 활용 | 여러 데이터의 관계를 운영 시나리오로 번역합니다. | traffic delay analysis |
+| 결과 전달 | 성과와 한계, 재현 절차를 함께 공개합니다. | code, tests, CI, result tables |
+
+## Toolbox
+
+**Build**  
+`Python` · `FastAPI` · `SQLAlchemy` · `MariaDB` · `React` · `TypeScript`
+
+**AI & Evaluation**  
+`RAG Evaluation` · `Embeddings` · `LLM-as-a-Judge` · `Computer Vision` · `Experimental Design` · `Statistical Testing`
+
+**Data & Delivery**  
+`EDA` · `Git` · `GitHub Actions` · `Reproducible Experiments`
 
 ## How I Work
 
-1. 평가할 수 있는 질문으로 문제를 다시 정의합니다.
-2. 데이터 누수와 비교 기준을 먼저 점검합니다.
-3. 평균 점수뿐 아니라 실패 사례와 불확실성을 함께 봅니다.
-4. 현재 확인된 사실, 한계, 다음 검증 항목을 분리해 기록합니다.
+<div align="center">
 
-## Technical Toolbox
+### Define → Build → Measure → Diagnose → Improve
 
-`Python` · `FastAPI` · `SQLAlchemy` · `MariaDB` · `React` · `Vite` · `Git`  
-`RAG Evaluation` · `Embeddings` · `LLM-as-a-Judge` · `Experimental Design` · `EDA`
+문제를 평가 가능한 형태로 정의하고, 빠르게 구현한 뒤, 실패 사례와 불확실성을 근거로 다음 개선을 결정합니다.
 
-## Currently Strengthening
+</div>
 
-- SQL과 PostgreSQL 기반 데이터 모델링
-- 재현 가능한 데이터·평가 파이프라인
-- Docker, CI, 자동화 테스트
-- tracing, metrics, structured logging을 이용한 observability
+---
 
-## AI-Assisted Development
-
-AI 코딩 도구를 구현과 디버깅에 적극 활용합니다. 문제 정의, 실험 설계, 평가 기준, 결과 해석과 최종 의사결정은 직접 주도하며, 결과물은 테스트와 재현 절차로 검증하는 방향으로 발전시키고 있습니다.
-
+<sub>AI 코딩 도구를 구현과 디버깅에 적극 활용합니다. 문제 정의, 실험 설계, 평가 기준, 결과 해석과 최종 의사결정은 직접 주도하며 테스트와 재현 절차로 결과를 검증합니다.</sub>
