@@ -1,111 +1,158 @@
+![Yoon Chanhyuk — Applied AI Engineer](assets/portfolio-hero.svg)
+
 <div align="center">
 
-# 윤찬혁 · Applied AI Engineer
-
-### AI를 만드는 것에서 끝내지 않고, 실패를 측정하고 원인을 추적합니다.
+### AI를 “동작하게” 만드는 데서 끝내지 않고, 실패를 측정하고 설명합니다.
 
 서울시립대학교 교통공학 × 인공지능  
-**RAG Evaluation · Multi-Agent Reliability · AI Monitoring · Data Products**
+**RAG Reliability · Multi-Agent Evaluation · AI Monitoring · Data Products**
 
-[![GitHub](https://img.shields.io/badge/GitHub-yoon--chan--hyeok-181717?style=flat-square&logo=github)](https://github.com/yoon-chan-hyeok)
+[프로젝트 보기](#featured-projects) · [검증된 성과](#proof-over-promises) · [기술 역량](#engineering-toolbox)
 
 </div>
 
 ---
 
-## Featured Work
+## 30-second snapshot
 
-### 01 · [Temporal RAG Drift Evaluation](https://github.com/yoon-chan-hyeok/temporal-rag-drift)
+| | |
+|---|---|
+| **지향점** | AI/ML Engineer · AI Reliability · Applied AI |
+| **강점** | 문제 정의 → 프로토타입 → 평가 설계 → 실패 분석 → 문서화 |
+| **대표 증거** | RAG drift AUROC **0.854**, multi-agent exact-step **+30.43%p**, 실행 가능한 OCR monitor |
+| **작업 방식** | 바이브코딩으로 속도를 확보하고, 지표·테스트·재현 절차로 결과를 검증 |
+| **도메인 연결** | AI 연구 문제를 웹·DB·CLI·교통 운영 의사결정까지 확장 |
 
-> 지식 업데이트가 RAG 답변을 어떻게 바꾸는지 측정하고, 그 변화가 실제 품질 저하로 이어질 위험을 탐지합니다.
+## Proof over promises
 
-- CLARK 누적 뉴스 스냅샷을 고정한 **temporal transfer evaluation**
-- 186개 confirmatory cohort에서 **AUROC 0.854 · F1 0.615 · Risk Lift 3.59×**
-- 평가 코드, 6개 테스트 모듈, 집계 결과와 재현 문서를 공개
+<table>
+<tr>
+<td width="25%" align="center"><h3>0.854</h3><sub>Temporal RAG<br/>Confirmatory AUROC</sub></td>
+<td width="25%" align="center"><h3>+30.43%p</h3><sub>Multi-Agent<br/>Exact-step vs Direct</sub></td>
+<td width="25%" align="center"><h3>3.59×</h3><sub>RAG Degradation<br/>Risk Lift</sub></td>
+<td width="25%" align="center"><h3>5 Projects</h3><sub>Research · Product<br/>Data · Monitoring</sub></td>
+</tr>
+</table>
 
-**Keywords** · Temporal RAG · Drift Detection · Risk Scoring · Evaluation Design
+> 수치는 README 장식이 아니라 공개된 결과표·평가 코드·테스트에서 확인할 수 있습니다.
 
----
+## Featured Projects
 
-### 02 · [Multi-Agent Failure Localization](https://github.com/yoon-chan-hyeok/multi-agent-failure-localization)
+<table>
+<tr>
+<td width="50%" valign="top">
+<h3><a href="https://github.com/yoon-chan-hyeok/temporal-rag-drift">01 · Temporal RAG Drift</a></h3>
+<p><strong>지식 업데이트 뒤 새로 망가진 질문을 어떻게 찾을까?</strong></p>
+<p>누적 뉴스 스냅샷 간 답변 분포 이동과 불확실성을 이용해 품질 저하 위험을 탐지했습니다.</p>
+<p><code>AUROC 0.854</code> · <code>F1 0.615</code> · <code>Risk Lift 3.59×</code></p>
+<p><sub>Python · RAG Evaluation · Embeddings · NLI · Statistical Testing</sub></p>
+</td>
+<td width="50%" valign="top">
+<h3><a href="https://github.com/yoon-chan-hyeok/multi-agent-failure-localization">02 · Multi-Agent Failure Localization</a></h3>
+<p><strong>여러 에이전트 중 누가, 정확히 언제 실패했을까?</strong></p>
+<p>작업 요구조건을 먼저 고정하고 긴 trace에서 가장 이른 미복구 오류를 찾는 TSR-Loc을 평가했습니다.</p>
+<p><code>184 traces</code> · <code>38.59% exact-step</code> · <code>+30.43%p</code></p>
+<p><sub>LLM Evaluation · Trace Analysis · Experiment Harness · CI</sub></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<h3><a href="https://github.com/yoon-chan-hyeok/ocr-quality-monitoring">03 · Label-Free OCR Monitor</a></h3>
+<p><strong>정답 라벨이 늦게 오는 운영 환경에서 무엇을 먼저 검수할까?</strong></p>
+<p>최근접 거리·robust z-score·centroid shift·RBF-MMD를 검토 우선순위로 변환했습니다.</p>
+<p><code>CLI</code> · <code>Synthetic demo</code> · <code>Tests</code> · <code>GitHub Actions</code></p>
+<p><sub>AI Monitoring · Data Drift · MMD · Python Packaging</sub></p>
+</td>
+<td width="50%" valign="top">
+<h3><a href="https://github.com/yoon-chan-hyeok/face-attendance-system">04 · Face Attendance System</a></h3>
+<p><strong>얼굴 인식 결과를 실제 출결 흐름까지 어떻게 연결할까?</strong></p>
+<p>RetinaFace·ArcFace, 다중 프레임 등록, threshold+margin 판정, API·DB·UI를 통합했습니다.</p>
+<p><code>0.68 threshold</code> · <code>0.03 margin</code> · <code>Full-stack AI</code></p>
+<p><sub>Computer Vision · FastAPI · MariaDB · React</sub></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<h3><a href="https://github.com/yoon-chan-hyeok/event-traffic-delay-analysis">05 · Event Traffic Delay</a></h3>
+<p><strong>대형 행사 혼잡 분석을 실행 가능한 운영안으로 바꿀 수 있을까?</strong></p>
+<p>OD·생활인구·버스·GIS 데이터를 결합해 3개 환승거점과 13,500명 셔틀 수송안을 설계했습니다.</p>
+<p><code>3 hubs</code> · <code>13,500 capacity</code> · <code>~₩50M</code></p>
+<p><sub>Mobility Data · EDA · GIS · Scenario Planning</sub></p>
+</td>
+<td width="50%" valign="top">
+<h3>What connects them?</h3>
+<p><strong>모델 점수보다 의사결정 가능한 증거를 만듭니다.</strong></p>
+<p>변화를 감지하고, 실패 위치를 설명하고, 사람이 검토할 순서를 만들며, 결과를 제품과 운영 흐름에 연결합니다.</p>
+<p><code>Measure</code> → <code>Diagnose</code> → <code>Decide</code></p>
+</td>
+</tr>
+</table>
 
-> 긴 multi-agent 실행 기록에서 누가, 언제, 어떤 결정으로 최종 실패를 만들었는지 추적합니다.
+## Engineering through-line
 
-- Who & When 벤치마크 **184 trajectories** 평가
-- task-only 설정 exact-step **38.59%**, direct baseline **8.15%**
-- 평가 harness, model backend, 테스트와 GitHub Actions 공개
+```mermaid
+flowchart LR
+    A["Ambiguous problem"] --> B["Measurable question"]
+    B --> C["Working prototype"]
+    C --> D["Evaluation protocol"]
+    D --> E["Failure analysis"]
+    E --> F["Product / decision"]
+    F -. feedback .-> B
+```
 
-**Keywords** · Multi-Agent Systems · Trace Analysis · Failure Attribution · LLM Evaluation
+## Capability map
 
----
-
-### 03 · [Face Attendance System](https://github.com/yoon-chan-hyeok/face-attendance-system)
-
-> 얼굴 등록부터 인증·출결 기록·관리 화면까지 연결한 end-to-end AI 애플리케이션입니다.
-
-- RetinaFace + ArcFace 기반 다중 프레임 등록과 품질 필터
-- **유사도 임계값 0.68 + 후보 간 margin 0.03**으로 오인식 방어
-- FastAPI · SQLAlchemy · MariaDB · React · Vite 통합
-
-**Keywords** · Computer Vision · Face Recognition · API · Database · Frontend
-
----
-
-### 04 · [Label-Free OCR Quality Monitoring](https://github.com/yoon-chan-hyeok/ocr-quality-monitoring)
-
-> 정답 라벨이 즉시 없는 운영 환경에서 OCR 임베딩 분포의 이상 신호를 조기에 선별합니다.
-
-- nearest-neighbor · robust z-score · centroid distance · RBF-MMD 모니터링
-- CLI, 합성 예제, 단위 테스트와 GitHub Actions를 갖춘 실행 가능한 패키지
-- 경보를 정답 판정이 아닌 **검토 우선순위 신호**로 설계
-
-**Keywords** · OCR · Data Drift · Unsupervised Monitoring · MMD · CI
-
----
-
-### 05 · [Major-Event Traffic Delay Analysis](https://github.com/yoon-chan-hyeok/event-traffic-delay-analysis)
-
-> 행사 수요와 교통·공간 데이터를 결합해 혼잡 위험과 운영 대안을 수치화한 졸업 연구입니다.
-
-- 혼잡 관련 상관계수 **0.5864 · 0.5969 · 0.7034**
-- 1.3만 명 수요 시나리오의 평균 지연 **0.80 · 1.26 · 1.93분**
-- 공덕·당산·노량진 허브와 **45인승 × 100대 × 3회 = 13,500명** 수송안 제시
-
-**Keywords** · Mobility Data · EDA · Scenario Analysis · Decision Support
-
----
-
-## What I Bring
-
-| 역량 | 작업 방식 | 프로젝트 근거 |
+| 역량 | 실제로 한 일 | 확인할 프로젝트 |
 |---|---|---|
-| 문제 정의 | 모호한 현상을 측정 가능한 질문과 지표로 바꿉니다. | RAG drift risk, failure localization |
-| 평가 설계 | 비교 기준·누수·불확실성을 먼저 확인합니다. | temporal split, baseline/ablation |
-| AI 구현 | 모델을 API·DB·UI·CLI와 연결합니다. | face attendance, OCR monitor |
-| 데이터 활용 | 여러 데이터의 관계를 운영 시나리오로 번역합니다. | traffic delay analysis |
-| 결과 전달 | 성과와 한계, 재현 절차를 함께 공개합니다. | code, tests, CI, result tables |
+| **AI 평가 설계** | temporal split, frozen transfer, baseline·ablation, paired significance | RAG · Multi-Agent |
+| **AI 시스템 구현** | embeddings, retrieval, model backends, CLI, API·DB·UI 연결 | RAG · OCR · Face |
+| **실패 분석** | drift risk, exact-step attribution, intervention probe | RAG · Multi-Agent |
+| **데이터 의사결정** | 다중 데이터 결합, 시나리오·용량·비용 산정 | Traffic |
+| **재현성** | 합성 fixture, 자동 테스트, CI, 결과표, claim boundary | RAG · Multi-Agent · OCR |
 
-## Toolbox
+## Engineering toolbox
 
-**Build**  
-`Python` · `FastAPI` · `SQLAlchemy` · `MariaDB` · `React` · `TypeScript`
+<p>
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
+<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"/>
+<img src="https://img.shields.io/badge/SQLAlchemy-D71F00?style=flat-square&logo=sqlalchemy&logoColor=white" alt="SQLAlchemy"/>
+<img src="https://img.shields.io/badge/MariaDB-003545?style=flat-square&logo=mariadb&logoColor=white" alt="MariaDB"/>
+<img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React"/>
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"/>
+<img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white" alt="GitHub Actions"/>
+</p>
 
-**AI & Evaluation**  
-`RAG Evaluation` · `Embeddings` · `LLM-as-a-Judge` · `Computer Vision` · `Experimental Design` · `Statistical Testing`
+**AI & Research**  
+RAG Evaluation · Embeddings · LLM-as-a-Judge · Computer Vision · Experimental Design · Statistical Testing
 
 **Data & Delivery**  
-`EDA` · `Git` · `GitHub Actions` · `Reproducible Experiments`
+EDA · GIS · Reproducible Experiments · API Design · Relational Data Modeling · CI
 
-## How I Work
+## How I build
 
 <div align="center">
 
 ### Define → Build → Measure → Diagnose → Improve
 
-문제를 평가 가능한 형태로 정의하고, 빠르게 구현한 뒤, 실패 사례와 불확실성을 근거로 다음 개선을 결정합니다.
-
 </div>
+
+1. 모호한 요구를 평가 가능한 질문으로 바꿉니다.
+2. 빠르게 동작하는 end-to-end 경로를 만듭니다.
+3. baseline과 실패 기준을 정하고 수치로 비교합니다.
+4. 평균 성능 뒤의 실패 사례와 불확실성을 찾습니다.
+5. 코드·테스트·문서·한계를 함께 남깁니다.
+
+## AI-assisted, human-owned
+
+AI 코딩 도구를 구현·탐색·디버깅에 적극 활용합니다.  
+**문제 정의, 실험 설계, 비교 기준, 결과 해석, 공개 범위와 최종 의사결정은 직접 책임집니다.**
 
 ---
 
-<sub>AI 코딩 도구를 구현과 디버깅에 적극 활용합니다. 문제 정의, 실험 설계, 평가 기준, 결과 해석과 최종 의사결정은 직접 주도하며 테스트와 재현 절차로 결과를 검증합니다.</sub>
+<div align="center">
+
+### 좋은 AI는 높은 점수만 내는 시스템이 아니라, 실패를 발견하고 설명할 수 있는 시스템이라고 생각합니다.
+
+[GitHub에서 작업 보기](https://github.com/yoon-chan-hyeok)
+
+</div>
