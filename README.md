@@ -12,9 +12,9 @@ AI 시스템의 성능 저하를 찾고, 실패가 시작된 단계를 좁히는
 
 </div>
 
-RAG, multi-agent system과 OCR처럼 여러 단계가 연결된 AI 시스템을 다뤘습니다. 평균 성능만 보고 끝내지 않고 어떤 입력이 새로 위험해졌는지, 오류가 어느 단계에서 시작됐는지, 사람이 무엇을 먼저 확인해야 하는지까지 연결합니다.
+운영에서는 정답이 늦게 도착하거나, 긴 실행 기록에서 원인이 묻히거나, 서로 다른 데이터가 같은 의사결정으로 이어져야 하는 제약이 생깁니다. 저는 이 제약을 먼저 정의하고 측정 가능한 질문으로 바꾼 뒤 구현과 평가를 진행했습니다.
 
-질문별 답변 분포, embedding과 execution trace처럼 형태가 다른 데이터를 비교 가능한 신호로 구성해 변화와 실패의 관계를 평가했습니다. 교통공학 졸업 연구에서는 OD, 생활·체류인구, 버스와 GIS 데이터를 결합하고, 교통량과 지체시간의 단조 관계를 운영 시나리오에 반영했습니다.
+RAG, multi-agent system과 OCR에서는 답변 분포, embedding과 execution trace를 비교 가능한 신호로 구성해 위험 사례와 조사 대상을 좁혔습니다. 교통공학 졸업 연구에서는 OD, 생활·체류인구, 버스와 GIS 데이터를 결합해 분석 결과를 운영 시나리오로 연결했습니다.
 
 아이디어는 작은 목업으로 먼저 확인합니다. 가능성이 보이면 평가 기준을 고정하고 구현을 넓히며, 결과가 예상과 다르면 데이터와 실행 단계를 나눠 다시 진단합니다. 실행 코드에는 테스트, 재현 절차와 해석 한계를 함께 남깁니다.
 
@@ -22,7 +22,7 @@ RAG, multi-agent system과 OCR처럼 여러 단계가 연결된 AI 시스템을 
 
 ### [Temporal RAG Drift](https://github.com/yoon-chan-hyeok/temporal-rag-drift)
 
-DB 업데이트 이후 새로 위험해진 RAG 질문을 정답 라벨 없이 우선순위화하고, evidence intervention으로 조사할 실패 구간을 좁혔습니다.
+DB 업데이트 직후에는 모든 질문의 최신 gold answer를 다시 만들기 어렵습니다. 업데이트 전후 RAG의 행동 변화만으로 새롭게 성능이 저하됐을 가능성이 높은 질문을 우선순위화하고, evidence intervention으로 조사할 실패 구간을 좁혔습니다.
 
 Detector를 다시 맞추지 않은 미래 질문 186건 평가에서 AUROC `0.854`, Recall `0.714`, F1 `0.615`, Risk lift `3.59×`를 기록했습니다.
 
@@ -30,7 +30,7 @@ Detector를 다시 맞추지 않은 미래 질문 186건 평가에서 AUROC `0.8
 
 ### [TSR-Loc: Multi-Agent Failure Localization](https://github.com/yoon-chan-hyeok/multi-agent-failure-localization)
 
-Task의 성공 조건을 먼저 고정하고 execution trace에서 이후에도 복구되지 않은 가장 이른 오류를 agent와 exact step으로 찾습니다.
+긴 execution trace에서는 마지막 오류만 보거나 이미 복구된 첫 실수를 원인으로 고르기 쉽습니다. Task의 성공 조건을 먼저 고정하고, 이후에도 복구되지 않은 가장 이른 오류를 agent와 exact step으로 찾았습니다.
 
 Who&When 184 trajectories에서 task-only TSR-Loc의 exact-step accuracy는 `38.59%`였습니다. Direct 방식보다 `30.43%p` 높았고, A2P 대비 차이는 통계적으로 유의하지 않았습니다.
 
@@ -38,19 +38,19 @@ Who&When 184 trajectories에서 task-only TSR-Loc의 exact-step accuracy는 `38.
 
 ### [Label-Free OCR Quality Monitor](https://github.com/yoon-chan-hyeok/ocr-quality-monitoring)
 
-정답 transcription이 도착하기 전에 record anomaly와 batch drift를 계산하고 먼저 검수할 OCR 결과를 정렬합니다. 설치 가능한 CLI, JSONL report, run hash와 CI tests를 포함합니다.
+정답 transcription이 늦게 도착하는 동안에는 OCR accuracy를 바로 계산할 수 없습니다. 승인 데이터와 비교한 record anomaly와 batch drift로 먼저 검수할 OCR 결과를 정렬했습니다. 설치 가능한 CLI, JSONL report, run hash와 CI tests를 포함합니다.
 
 `Python` · `Nearest-neighbor drift` · `RBF-MMD` · `CLI` · `CI`
 
 ### [Face Attendance System](https://github.com/yoon-chan-hyeok/face-attendance-system)
 
-RetinaFace와 ArcFace를 multi-frame enrollment, ambiguity rejection과 출결 기록으로 연결한 설계 case study입니다. 공개 저장소에는 실제 생체정보와 application source snapshot이 포함되지 않습니다.
+얼굴 인식 결과를 바로 출석으로 기록하면 흐린 등록 이미지와 비슷한 후보 때문에 잘못 승인할 수 있습니다. RetinaFace와 ArcFace를 multi-frame enrollment, ambiguity rejection과 출결 기록으로 연결한 설계 case study입니다.
 
 `Computer vision` · `FastAPI` · `MariaDB` · `React` · `Decision rule`
 
 ### [Event Traffic Delay Analysis](https://github.com/yoon-chan-hyeok/event-traffic-delay-analysis)
 
-OD, 생활·체류인구, 버스와 GIS 데이터를 결합해 행사 종료 뒤 수요 집중을 분석한 졸업 연구입니다. 초과 교통량이 늘 때 예측 지체가 감소하지 않도록 isotonic regression을 적용하고, 결과를 공덕·당산·노량진 환승거점과 수송 용량·비용 시나리오로 연결했습니다.
+행사 혼잡 수치만으로는 언제, 어느 방향에, 어느 규모로 공급할지 결정하기 어렵습니다. OD, 생활·체류인구, 버스와 GIS 데이터를 결합하고 isotonic regression으로 지체의 단조 관계를 반영해, 공덕·당산·노량진 환승거점과 수송 용량·비용 시나리오를 만들었습니다.
 
 `Python` · `GIS` · `Multi-source data` · `Demand and capacity analysis`
 
