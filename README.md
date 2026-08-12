@@ -14,6 +14,8 @@ AI 시스템의 성능 저하를 찾고, 실패가 시작된 단계를 좁히는
 
 RAG, multi-agent system과 OCR처럼 여러 단계가 연결된 AI 시스템을 다뤘습니다. 평균 성능만 보고 끝내지 않고 어떤 입력이 새로 위험해졌는지, 오류가 어느 단계에서 시작됐는지, 사람이 무엇을 먼저 확인해야 하는지까지 연결합니다.
 
+질문별 답변 분포, embedding과 execution trace처럼 형태가 다른 데이터를 비교 가능한 신호로 구성해 변화와 실패의 관계를 평가했습니다. 교통공학 졸업 연구에서는 OD, 생활·체류인구, 버스와 GIS 데이터를 결합하고, 교통량과 지체시간의 단조 관계를 운영 시나리오에 반영했습니다.
+
 아이디어는 작은 목업으로 먼저 확인합니다. 가능성이 보이면 평가 기준을 고정하고 구현을 넓히며, 결과가 예상과 다르면 데이터와 실행 단계를 나눠 다시 진단합니다. 실행 코드에는 테스트, 재현 절차와 해석 한계를 함께 남깁니다.
 
 ## 대표 프로젝트
@@ -48,7 +50,7 @@ RetinaFace와 ArcFace를 multi-frame enrollment, ambiguity rejection과 출결 �
 
 ### [Event Traffic Delay Analysis](https://github.com/yoon-chan-hyeok/event-traffic-delay-analysis)
 
-OD, 생활인구, 버스와 GIS 데이터를 결합해 행사 종료 뒤 수요 집중을 분석한 졸업 연구입니다. 결과를 공덕·당산·노량진 환승거점과 수송 용량·비용을 포함한 운영 시나리오로 연결했습니다.
+OD, 생활·체류인구, 버스와 GIS 데이터를 결합해 행사 종료 뒤 수요 집중을 분석한 졸업 연구입니다. 초과 교통량이 늘 때 예측 지체가 감소하지 않도록 isotonic regression을 적용하고, 결과를 공덕·당산·노량진 환승거점과 수송 용량·비용 시나리오로 연결했습니다.
 
 `Python` · `GIS` · `Multi-source data` · `Demand and capacity analysis`
 
@@ -57,4 +59,4 @@ OD, 생활인구, 버스와 GIS 데이터를 결합해 행사 종료 뒤 수요 
 - AI/ML: retrieval, embeddings, NLI, semantic uncertainty, computer vision
 - Evaluation: temporal split, frozen transfer, baseline and ablation, paired significance test
 - Engineering: Python, FastAPI, SQLAlchemy, MariaDB, React, TypeScript, CLI, CI
-- Data: EDA, GIS, multi-source join, demand and capacity analysis
+- Data: EDA, GIS, multi-source join, distribution shift, isotonic regression, demand and capacity analysis
