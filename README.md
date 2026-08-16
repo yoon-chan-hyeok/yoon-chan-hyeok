@@ -4,11 +4,11 @@
 
 ## 윤찬혁 · AI/ML Engineer
 
-AI 시스템의 성능 저하를 찾고, 실패가 시작된 단계를 좁히는 평가·모니터링 도구를 만듭니다.
+AI 시스템에서 새로 발생한 실패를 찾고, 문제가 시작된 단계를 좁히는 평가·모니터링 도구를 만듭니다.
 
 서울과학기술대학교 교통공학 전공
 
-[Portfolio](https://yoon-chan-hyeok.github.io/) · [RAG Monitoring](https://github.com/yoon-chan-hyeok/temporal-rag-drift) · [Agent Evaluation](https://github.com/yoon-chan-hyeok/multi-agent-failure-localization) · [OCR Monitoring](https://github.com/yoon-chan-hyeok/ocr-quality-monitoring)
+[Portfolio](https://yoon-chan-hyeok.github.io/) · [RAG Failure Detection](https://github.com/yoon-chan-hyeok/temporal-rag-drift) · [Agent Evaluation](https://github.com/yoon-chan-hyeok/multi-agent-failure-localization) · [OCR Monitoring](https://github.com/yoon-chan-hyeok/ocr-quality-monitoring)
 
 </div>
 
@@ -18,11 +18,13 @@ RAG, multi-agent system과 OCR에서는 답변 분포, embedding과 execution tr
 
 아이디어는 작은 목업으로 먼저 확인합니다. 가능성이 보이면 평가 기준을 고정하고 구현을 넓히며, 결과가 예상과 다르면 데이터와 실행 단계를 나눠 다시 진단합니다. 실행 코드에는 테스트, 재현 절차와 해석 한계를 함께 남깁니다.
 
+이 GitHub에는 기존 실험, 수업 프로젝트와 졸업 연구를 공개 가능한 형태로 다시 정리했습니다. 따라서 저장소 생성일이 실제 작업을 시작한 시점과 같지는 않습니다.
+
 ## 대표 프로젝트
 
-### [Temporal RAG Drift](https://github.com/yoon-chan-hyeok/temporal-rag-drift)
+### [Temporal RAG Failure Detection](https://github.com/yoon-chan-hyeok/temporal-rag-drift)
 
-DB 업데이트 직후에는 모든 질문의 최신 gold answer를 다시 만들기 어렵습니다. 업데이트 전후 RAG의 행동 변화만으로 새롭게 성능이 저하됐을 가능성이 높은 질문을 우선순위화하고, evidence intervention으로 조사할 실패 구간을 좁혔습니다.
+DB 업데이트 직후에는 모든 질문의 최신 gold answer를 다시 만들기 어렵습니다. 업데이트 전후 RAG의 행동 변화만으로 새롭게 실패했을 가능성이 높은 질문을 탐지하고, evidence intervention으로 먼저 조사할 구간을 좁혔습니다.
 
 Detector를 다시 맞추지 않은 미래 질문 186건 평가에서 AUROC `0.854`, Recall `0.714`, F1 `0.615`, Risk lift `3.59×`를 기록했습니다.
 
@@ -42,11 +44,11 @@ Who&When 184 trajectories에서 task-only TSR-Loc의 exact-step accuracy는 `38.
 
 `Python` · `Nearest-neighbor drift` · `RBF-MMD` · `CLI` · `CI`
 
-### [Face Attendance System](https://github.com/yoon-chan-hyeok/face-attendance-system)
+### [Face Attendance System Hardening](https://github.com/yoon-chan-hyeok/face-attendance-system)
 
-얼굴 인식 결과를 바로 출석으로 기록하면 흐린 등록 이미지와 비슷한 후보 때문에 잘못 승인할 수 있습니다. RetinaFace와 ArcFace를 multi-frame enrollment, ambiguity rejection과 출결 기록으로 연결한 설계 case study입니다.
+기존 얼굴 출결 시스템에서 인식 결과를 바로 기록하면 흐린 등록 이미지와 비슷한 후보 때문에 잘못 승인할 수 있었습니다. 등록·식별·승인 흐름을 분석하고, RetinaFace와 ArcFace 기반 식별에 multi-frame enrollment, ambiguity rejection과 IN/OUT 상태 전환을 보강했습니다.
 
-`Computer vision` · `FastAPI` · `MariaDB` · `React` · `Decision rule`
+`Existing system hardening` · `Computer vision` · `FastAPI` · `MariaDB` · `React`
 
 ### [Event Traffic Delay Analysis](https://github.com/yoon-chan-hyeok/event-traffic-delay-analysis)
 
