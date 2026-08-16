@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
-  <title id="title">Yoon Chanhyuk</title>
+  <title id="title">Yoon Chanhyeok</title>
   <desc id="desc">AI evaluation, failure localization and monitoring.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
@@ -8,7 +8,7 @@
       <stop offset="1" stop-color="#0B1220"/>
     </linearGradient>
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="0" stop-color="#3155E7"/>
       <stop offset="1" stop-color="#22D3EE"/>
     </linearGradient>
     <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
@@ -18,11 +18,11 @@
   </defs>
   <rect width="1200" height="360" rx="24" fill="url(#bg)"/>
   <rect width="1200" height="360" rx="24" fill="url(#grid)"/>
-  <circle cx="1060" cy="70" r="150" fill="#8B5CF6" opacity=".15" filter="url(#glow)"/>
+  <circle cx="1060" cy="70" r="150" fill="#3155E7" opacity=".15" filter="url(#glow)"/>
   <circle cx="1120" cy="210" r="130" fill="#22D3EE" opacity=".12" filter="url(#glow)"/>
   <rect x="70" y="54" width="58" height="6" rx="3" fill="url(#accent)"/>
-  <text x="70" y="93" fill="#22D3EE" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" letter-spacing="3">APPLIED AI ENGINEER</text>
-  <text x="70" y="151" fill="#F8FAFC" font-family="Segoe UI,Arial,sans-serif" font-size="54" font-weight="800">Yoon Chanhyuk</text>
+  <text x="70" y="93" fill="#22D3EE" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" letter-spacing="3">AI / ML ENGINEER</text>
+  <text x="70" y="151" fill="#F8FAFC" font-family="Segoe UI,Arial,sans-serif" font-size="54" font-weight="800">Yoon Chanhyeok</text>
   <text x="70" y="190" fill="#CBD5E1" font-family="Segoe UI,Arial,sans-serif" font-size="21">Evaluation, failure localization and monitoring.</text>
   <path d="M930 112h150m-120-30 30 30-30 30" fill="none" stroke="url(#accent)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
   <g transform="translate(70 240)">
