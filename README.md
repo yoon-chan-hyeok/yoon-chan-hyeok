@@ -28,14 +28,14 @@
 
 ### 대표 결과
 
-- Temporal RAG: 미래 질문 186건에 T0에서 고정한 detector를 적용해 AUROC `0.854`, Recall `0.714`, Risk lift `3.59×`를 기록했습니다. Risk lift는 검토 대상으로 고른 집합에 새 저하 사례가 전체 평균보다 얼마나 더 모였는지를 뜻합니다.
+- Temporal RAG: 첫 업데이트에서 모델과 threshold를 고정한 뒤 네 개의 미래 업데이트 341건으로 옮겨 평가했습니다. L2 logistic은 future AUROC `0.883`을 기록했고, 상위 모델 간 차이는 bootstrap 구간이 겹쳐 하나의 모델이 항상 우수하다고 해석하지 않았습니다.
 - TSR-Loc: Who&When 184 trajectories에서 exact-step accuracy `38.59%`를 기록했습니다. Direct 방식보다 `30.43%p` 높았지만 A2P와의 차이는 통계적으로 유의하지 않았습니다.
 - OCR monitoring: confidence가 강한 baseline임을 확인했고, embedding novelty의 추가 이득은 failure type에 따라 달라졌습니다. 공개 CLI는 원 benchmark 재현 도구가 아니라 baseline과 candidate 사이의 record·batch drift를 점검하는 도구입니다.
 
 ## 추가 사례
 
-- [Major Event Travel Time Delay Analysis](https://github.com/yoon-chan-hyeok/event-traffic-delay-analysis): 행사 뒤 귀가 지연을 계기로 OD와 대중교통 데이터를 결합했습니다. 현재 공개본은 원 분석의 요일 비교 문제를 명시하고, 재현 가능한 synthetic pipeline과 notebook audit을 제공합니다.
-- [Face Attendance System Hardening](https://github.com/yoon-chan-hyeok/face-attendance-system): 기존 얼굴 출결 시스템의 오승인 사례를 바탕으로 등록과 식별 흐름을 고도화한 설계 사례입니다. 생체정보와 application source는 공개하지 않았으며 FAR·FRR calibration이 남아 있습니다.
+- [Yeouido Festival Mobility Analysis](https://github.com/yoon-chan-hyeok/yeouido-festival-mobility-analysis): 행사 뒤 귀가 지연을 계기로 SKT OD·체류인구, 버스·지하철 이용 자료, TPSS 정차횟수와 GIS를 결합했습니다. 잘못된 요일 비교와 30분 구간 누락을 바로잡고, 동일 토요일 비교·join audit·공개 집계 재현 절차를 남겼습니다.
+- [Face Attendance System Hardening](https://github.com/yoon-chan-hyeok/face-attendance-system): 기존 얼굴 출결 시스템의 오승인 사례를 바탕으로 다중 프레임 등록, 후보 간 margin 판정과 다중 얼굴 중복 처리를 구현했습니다. 전체 애플리케이션 소스는 공개하고 얼굴 이미지·임베딩·접속 정보는 제외했으며, FAR·FRR calibration이 남아 있습니다.
 
 ## 일하는 방식
 
