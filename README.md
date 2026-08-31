@@ -28,7 +28,7 @@
 | [TSR-Loc: Multi-Agent Failure Localization](https://github.com/yoon-chan-hyeok/multi-agent-failure-localization) | 과업의 성공 명세를 trace보다 먼저 만들고 대조하면 실패 위치를 더 정확히 찾을 수 있을까? | 성공 요건 사전 고정, 복구 여부 추적, 책임 agent·earliest step 평가 |
 | [Yeouido Festival Mobility Analysis](https://github.com/yoon-chan-hyeok/yeouido-festival-mobility-analysis) | 불꽃축제 뒤 길어진 귀가를 수요 증가만으로 설명할 수 있을까? | 이동시간·수요·정차횟수 비교와 외곽 환승거점 셔틀 운영 가설 |
 | [OCR Failure Risk Monitoring](https://github.com/yoon-chan-hyeok/ocr-quality-monitoring) | Text log를 embedding space에서 비교하면 gold transcription 없이 failure risk를 찾을 수 있을까? | Nearest-neighbor distance, centroid·MMD batch drift, confidence 비교와 한계 |
-| [Face Attendance System](https://github.com/yoon-chan-hyeok/face-attendance-system) | 기존 얼굴 출결 시스템의 오승인과 느린 다중 프레임 처리를 어떻게 줄일 수 있을까? | 다중 프레임 등록, 후보 재정렬, 판정 여유값, 다중 얼굴 중복 처리 |
+| [Face Attendance System Upgrade](https://github.com/yoon-chan-hyeok/face-attendance-system) | 기존 얼굴 출결 시스템의 오승인과 느린 다중 프레임 처리를 어떻게 줄일 수 있을까? | 다중 프레임 등록, 후보 재정렬, 판정 여유값, 다중 얼굴 중복 처리 |
 
 각 저장소에는 결과만 적지 않았습니다. 왜 그 문제를 골랐는지, 무엇이 예상과 달랐는지, 어떤 판단으로 방법을 바꿨는지까지 정리했습니다.
 
