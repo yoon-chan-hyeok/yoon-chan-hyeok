@@ -13,14 +13,14 @@
 | [Temporal RAG Failure Detection](https://github.com/yoon-chan-hyeok/temporal-rag-drift) | DB 업데이트 전후 답변 변화를 비교해 검수가 필요한 질문을 찾고, 근거 개입 실험으로 점검할 RAG 단계를 좁혔습니다. |
 | [Multi-Agent Failure Localization · TSR-Loc](https://github.com/yoon-chan-hyeok/multi-agent-failure-localization) | 과업 성공 조건을 먼저 만든 뒤 실행 로그와 대조해, 복구되지 않은 오류의 에이전트와 단계를 찾았습니다. |
 | [Yeouido Festival Mobility Analysis](https://github.com/yoon-chan-hyeok/yeouido-festival-mobility-analysis) | 불꽃축제 귀가 교통을 수요·운행·이동시간으로 분석하고, 외곽 환승거점 셔틀을 제안했습니다. |
-| [OCR Failure Risk Monitoring](https://github.com/yoon-chan-hyeok/ocr-quality-monitoring) | OCR 텍스트 임베딩으로 오류 위험을 찾는 실험과 confidence 비교를 진행하고, 임베딩 기반 검수 목록 CLI를 구현했습니다. |
+| [OCR Failure Risk Monitoring](https://github.com/yoon-chan-hyeok/ocr-quality-monitoring) | 규제 문서를 RAG에 넣기 전 검수할 상황을 가정해 confidence와 텍스트 임베딩을 비교하고, 임베딩이 보완하는 오류와 놓치는 오류를 구분했습니다. |
 | [Face Attendance System Upgrade](https://github.com/yoon-chan-hyeok/face-attendance-system) | 기존 시스템의 오승인 사례를 바탕으로 다중 샘플 등록과 후보 간 margin 판정, 재촬영 흐름을 보완했습니다. |
 
 ## 일하는 방식
 
 실제로 사용할 상황을 먼저 생각합니다. 선행 사례를 살펴보고 작은 목업이나 실험으로 가설을 확인한 뒤 구현 범위를 넓히는 편입니다. 결과가 예상과 다르면 데이터와 평가 기준, 실행 과정을 나눠 다시 봅니다.
 
-교통 분석에서는 서로 단위가 다른 관측치를 평상시와 각각 비교했고, RAG에서는 DB 업데이트의 시간 순서를 지켜 탐지기를 평가했습니다. 방법을 고를 때는 잘 맞는 결과뿐 아니라 그 결과를 어디까지 믿을 수 있는지도 함께 확인하려고 합니다.
+교통 분석에서는 단위가 다른 자료를 시간·공간 기준에 맞추고 평상시와 비교했습니다. OCR 실험에서는 confidence가 예상보다 강해, 임베딩의 역할을 대체재에서 보조 신호로 좁혔습니다. 방법을 고를 때는 결과가 좋은 조건뿐 아니라 놓치는 경우도 함께 봅니다.
 
 ## 경험
 
