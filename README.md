@@ -11,10 +11,10 @@
 | 프로젝트 | 무엇을 했는가 |
 |---|---|
 | [RAGOps: Temporal RAG Failure Detection](https://github.com/yoon-chan-hyeok/temporal-rag-drift) | DB 업데이트 전후 답변 변화를 비교해 검수가 필요한 질문을 찾고, 근거 개입 실험으로 점검할 RAG 단계를 좁혔습니다. |
-| [Multi-Agent Failure Localization · TSR-Loc](https://github.com/yoon-chan-hyeok/multi-agent-failure-localization) | 과업 성공 조건을 먼저 만든 뒤 실행 로그와 대조해, 복구되지 않은 오류의 에이전트와 단계를 찾았습니다. |
-| [Yeouido Festival Mobility Analysis](https://github.com/yoon-chan-hyeok/yeouido-festival-mobility-analysis) | 불꽃축제 귀가 교통을 수요·운행·이동시간으로 분석하고, 외곽 환승거점 셔틀을 제안했습니다. |
-| [OCR Failure Risk Monitoring](https://github.com/yoon-chan-hyeok/ocr-quality-monitoring) | 규제 문서를 RAG에 넣기 전 검수할 상황을 가정해 confidence와 텍스트 임베딩을 비교하고, 임베딩이 보완하는 오류와 놓치는 오류를 구분했습니다. |
-| [Face Attendance System Upgrade](https://github.com/yoon-chan-hyeok/face-attendance-system) | 기존 시스템의 오승인 사례를 바탕으로 다중 샘플 등록과 후보 간 margin 판정, 재촬영 흐름을 보완했습니다. |
+| [TSR-Loc: 성공 명세 기반 멀티에이전트 실패 위치 탐지](https://github.com/yoon-chan-hyeok/multi-agent-failure-localization) | 과업 성공 조건을 먼저 만든 뒤 실행 로그와 대조해, 복구되지 않은 오류의 에이전트와 단계를 찾았습니다. |
+| [여의도 불꽃축제 귀가 교통 분석과 셔틀 운영 제안](https://github.com/yoon-chan-hyeok/yeouido-festival-mobility-analysis) | 불꽃축제 귀가 교통을 수요·운행·이동시간으로 분석하고, 외곽 환승거점 셔틀을 제안했습니다. |
+| [OCR Quality Monitor: 텍스트 임베딩 기반 검수 우선순위 산정](https://github.com/yoon-chan-hyeok/ocr-quality-monitoring) | 규제 문서를 RAG에 넣기 전 검수할 상황을 가정해 confidence와 텍스트 임베딩을 비교하고, 임베딩이 보완하는 오류와 놓치는 오류를 구분했습니다. |
+| [Face Attendance: 오인 승인 방지를 위한 판정 고도화](https://github.com/yoon-chan-hyeok/face-attendance-system) | 기존 시스템의 오승인 사례를 바탕으로 다중 샘플 등록과 후보 간 margin 판정, 재촬영 흐름을 보완했습니다. |
 
 ## 일하는 방식
 
